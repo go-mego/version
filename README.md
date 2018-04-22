@@ -1,4 +1,4 @@
-# Version
+# Version [![GoDoc](https://godoc.org/github.com/go-mego/version?status.svg)](https://godoc.org/github.com/go-mego/version)
 
 Version 套件能讓你更好聲明任何事物的版本號。這套件可能有點奇怪，但有些時候它能協助你維持命名的秩序。
 
@@ -29,9 +29,9 @@ import (
 
 func main() {
 	m := mego.New()
-	m.Get("/", func() string {
-		// 結果：「此伺服器版本是：1.0.0+stable」。
-		return "此伺服器版本是：" + version.Define(1, 0, 0, "stable").String()
+	m.GET("/", func() string {
+		// 結果：1.0.0+stable
+		return version.Define(1, 0, 0, "stable").String()
 	})
 	m.Run()
 }
